@@ -40,10 +40,6 @@
 - <b> O que é: </b> Certifique-se de que os erros sejam claramente identificados visual e auditivamente, usando, por exemplo, mudança de cor, ícone e som de alerta e uma mensagem de texto. Garantir também que exista uma sugestão clara de onde o erro ocorre e como pode ser solucionado.  
 - <b> Por que é importante: </b> Facilita a correção de erros por usuários com diferentes habilidades, melhorando a experiência e eficiência.  
 
-Aqui está a versão revisada do texto sobre acessibilidade, com exemplos de código corretos e incorretos para cada tópico. Os exemplos ilustram práticas de acessibilidade, mostrando como implementar corretamente e os problemas de práticas inadequadas.
-
----
-
 ## 11. Finalidade do Link  
 - **O que é:** Cada link deve ter um texto descritivo ou estar inserido em um contexto que indique claramente sua finalidade.  
 - **Por que é importante:** Evita confusões para todos os usuários, especialmente aqueles que utilizam tecnologias assistivas.
