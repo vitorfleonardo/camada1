@@ -1,44 +1,211 @@
-# camada1
+# camada 1
 
-## 1. Informações e Relações  
-- <b> O que é: </b> Organize os elementos da tela para que suas relações e informações sejam claras tanto para quem vê quanto para quem ouve. 
-- <b> Por que é importante: </b>Isso garante que tanto pessoas que veem quanto aquelas que utilizam leitores de tela compreendam o conteúdo da mesma maneira.
+## 1. Informações e Relações
+- **O que é:** Organize os elementos da tela de forma que as relações entre eles fiquem claras tanto para quem vê quanto para quem utiliza leitores de tela.
+- **Por que é importante:** Garante que tanto usuários visuais quanto aqueles que utilizam tecnologias assistivas compreendam o conteúdo da mesma forma.
 
-## 2. Sequência com Significado  
-- <b> O que é: </b> Garanta que a sequência do conteúdo faça sentido lógico e seja preservada em diferentes tamanhos de tela, garantindo também que os elementos focáveis na tela sigam uma ordem sequencial e lógica que preserve o significado do conteúdo, assegurando uma experiência de navegação previsível.  
-- <b> Por que é importante: </b> Mantém a experiência de navegação previsível, facilitando o uso por todos, especialmente aqueles que dependem de navegação pelo teclado ou tecnologias assistivas.  
+### Exemplo incorreto:
+```html
+<div>
+  <h2>Título</h2>
+  <p>Texto descritivo</p>
+  <input type="text">
+</div>
+<div>
+  <button>Enviar</button>
+</div>
+```
+Neste exemplo, o botão de envio está fora do contexto visual e lógico do formulário.
 
-## 3. Página com Título  
-- <b> O que é: </b> Certifique-se de que cada página tenha um título claro e descritivo que indique sua finalidade.  
-- <b> Por que é importante: </b> Isso ajuda os usuários, especialmente aqueles que usam leitores de tela, a identificar rapidamente o propósito da página.  
+### Exemplo correto:
+```html
+<form>
+  <h2>Título</h2>
+  <p>Texto descritivo</p>
+  <input type="text">
+  <button type="submit">Enviar</button>
+</form>
+```
+Aqui, o botão está relacionado ao campo de texto dentro do formulário, garantindo clareza para todos os usuários.
 
-## 4. Utilização de Características Sensoriais  
-- <b> O que é: </b> Forneça instruções que não dependam apenas de características sensoriais como formato, cor ou posição, tais como “clique no botão abaixo”.  
-- <b> Por que é importante: </b> Isso permite que usuários com deficiência visual ou daltonismo entendam as instruções sem dificuldades.  
+---
 
-## 5. Nome, Função e Valor Programático  
-- <b> O que é: </b> Certifique-se de que todos os componentes da interface do usuário, como formulários, links e elementos gerados por scripts, possam ser identificados e entendidos por tecnologias assistivas usando nome, função e valor programaticamente.  
-- <b> Por que é importante: </b> Isso permite que tecnologias assistivas interpretem corretamente o conteúdo e sua função, tornando a navegação acessível.  
+## 2. Sequência com Significado
+- **O que é:** Garanta que a sequência do conteúdo faça sentido lógico e seja preservada em diferentes tamanhos de tela, com foco em uma ordem sequencial e lógica dos elementos focáveis.
+- **Por que é importante:** Facilita a navegação por teclado e o uso de tecnologias assistivas, mantendo a experiência de navegação previsível.
 
-## 6. Conteúdo Não Textual  
-- <b> O que é: </b> Forneça descrições textuais para todas as imagens, ícones e CAPTCHAs relevantes, garantindo que suas funções e conteúdos sejam compreensíveis por leitores de tela.  
-- <b> Por que é importante: </b> Descrições textuais garantem que usuários de leitores de tela compreendam o propósito e o conteúdo visual.  
+### Exemplo incorreto:
+```html
+<div tabindex="3">Texto 3</div>
+<div tabindex="1">Texto 1</div>
+<div tabindex="2">Texto 2</div>
+```
+A ordem do `tabindex` está fora de sequência, confundindo a navegação.
 
-## 7. Transcrições e Legendas  
-- <b> O que é: </b> Forneça transcrições textuais para todo conteúdo de áudio e forneça legendas e/ou audiodescrições para todo conteúdo de vídeo.  
-- <b> Por que é importante: </b> Isso garante o acesso de pessoas com deficiência auditiva ou visual ao conteúdo multimídia.  
+### Exemplo correto:
+```html
+<div tabindex="1">Texto 1</div>
+<div tabindex="2">Texto 2</div>
+<div tabindex="3">Texto 3</div>
+```
+A sequência do `tabindex` é lógica e segue a ordem visual.
 
-## 8. Consistência em Formulários  
-- <b> O que é: </b> Evite alterar o contexto do usuário ao interagir com campos de entrada de dados e cabeçalhos, a menos que haja confirmação explícita, de forma a manter a consistência e previsibilidade para os usuários ao preencher formulários, garantindo também que todos os rótulos descrevam claramente a finalidade dos campos, inclusive com instruções, se necessário.  
-- <b> Por que é importante: </b> Ajuda o usuário a entender melhor o que é necessário preencher e evita confusões durante o processo de envio de formulários.  
+---
 
-## 9. Entrada Redundante  
-- <b> O que é: </b> Evite pedir informações repetidas durante o preenchimento de um formulário em etapas, a menos que seja essencial (como para confirmação de senha).  
-- <b> Por que é importante: </b> Simplifica o preenchimento de formulários, economizando tempo e esforço dos usuários.  
+## 3. Página com Título
+- **O que é:** Certifique-se de que cada página tenha um título claro e descritivo.
+- **Por que é importante:** Isso ajuda os usuários, especialmente aqueles que usam leitores de tela, a identificar rapidamente o propósito da página.
 
-## 10. Identificação e Correção de Erros  
-- <b> O que é: </b> Certifique-se de que os erros sejam claramente identificados visual e auditivamente, usando, por exemplo, mudança de cor, ícone e som de alerta e uma mensagem de texto. Garantir também que exista uma sugestão clara de onde o erro ocorre e como pode ser solucionado.  
-- <b> Por que é importante: </b> Facilita a correção de erros por usuários com diferentes habilidades, melhorando a experiência e eficiência.  
+### Exemplo incorreto:
+```html
+<title>Página 1</title>
+```
+O título da página não fornece informações claras sobre o conteúdo.
+
+### Exemplo correto:
+```html
+<title>Artigo sobre Acessibilidade Digital</title>
+```
+O título é descritivo e informa o propósito da página.
+
+---
+
+## 4. Utilização de Características Sensoriais
+- **O que é:** Evite depender apenas de características sensoriais como cor ou posição para fornecer instruções.
+- **Por que é importante:** Pessoas com deficiência visual ou daltonismo podem não perceber características sensoriais.
+
+### Exemplo incorreto:
+```html
+<p>Clique no botão verde abaixo.</p>
+<button style="background-color: green;">Enviar</button>
+```
+Esse exemplo depende da cor para instrução.
+
+### Exemplo correto:
+```html
+<p>Clique no botão abaixo com o texto "Enviar".</p>
+<button style="background-color: green;">Enviar</button>
+```
+Aqui, o texto "Enviar" serve como referência, não a cor.
+
+---
+
+## 5. Nome, Função e Valor Programático
+- **O que é:** Certifique-se de que componentes da interface como formulários e links sejam identificados e compreendidos por tecnologias assistivas.
+- **Por que é importante:** Facilita a interação de tecnologias assistivas com o conteúdo.
+
+### Exemplo incorreto:
+```html
+<input type="text">
+```
+Este campo de entrada não tem rótulo programático.
+
+### Exemplo correto:
+```html
+<label for="nome">Nome</label>
+<input id="nome" type="text">
+```
+O campo tem um rótulo (`label`), facilitando a compreensão por leitores de tela.
+
+---
+
+## 6. Conteúdo Não Textual
+- **O que é:** Forneça descrições textuais para imagens e ícones.
+- **Por que é importante:** Ajuda leitores de tela a interpretar o conteúdo visual.
+
+### Exemplo incorreto:
+```html
+<img src="imagem.jpg">
+```
+A imagem não tem descrição.
+
+### Exemplo correto:
+```html
+<img src="imagem.jpg" alt="Descrição da imagem">
+```
+A `alt` fornece uma descrição textual da imagem.
+
+---
+
+## 7. Transcrições e Legendas
+- **O que é:** Forneça transcrições para áudio e legendas para vídeos.
+- **Por que é importante:** Isso garante acesso ao conteúdo multimídia para pessoas com deficiência auditiva ou visual.
+
+### Exemplo incorreto:
+```html
+<video src="video.mp4" controls></video>
+```
+O vídeo não tem legendas.
+
+### Exemplo correto:
+```html
+<video src="video.mp4" controls>
+  <track kind="captions" src="legendas.vtt" srclang="pt" label="Português">
+</video>
+```
+O vídeo inclui legendas para acessibilidade.
+
+---
+
+## 8. Consistência em Formulários
+- **O que é:** Mantenha consistência em formulários e certifique-se de que os rótulos descrevem claramente a finalidade dos campos.
+- **Por que é importante:** Facilita o preenchimento de formulários e evita confusões.
+
+### Exemplo incorreto:
+```html
+<input type="text">
+```
+O campo não tem rótulo.
+
+### Exemplo correto:
+```html
+<label for="email">Email</label>
+<input id="email" type="text" placeholder="Digite seu email">
+```
+O campo tem rótulo e instruções claras.
+
+---
+
+## 9. Entrada Redundante
+- **O que é:** Evite solicitar informações redundantes, a menos que seja necessário.
+- **Por que é importante:** Simplifica o preenchimento de formulários, economizando tempo e esforço.
+
+### Exemplo incorreto:
+```html
+<input type="email" placeholder="Digite seu email">
+<input type="email" placeholder="Confirme seu email">
+```
+Requer confirmação redundante do email.
+
+### Exemplo correto:
+```html
+<input type="email" placeholder="Digite seu email">
+```
+O campo de email é solicitado apenas uma vez.
+
+---
+
+## 10. Identificação e Correção de Erros
+- **O que é:** Certifique-se de que os erros sejam claramente identificados e acompanhados de mensagens descritivas.
+- **Por que é importante:** Facilita a correção de erros por usuários com diferentes habilidades.
+
+### Exemplo incorreto:
+```html
+<input type="text">
+<div class="error" style="color: red;">Erro</div>
+```
+A mensagem de erro é vaga e depende apenas da cor.
+
+### Exemplo correto:
+```html
+<input type="text" aria-describedby="erro-nome">
+<div id="erro-nome" class="error">Por favor, insira seu nome.</div>
+```
+A mensagem de erro é clara e programaticamente vinculada ao campo.
+
+---
+
+Esses exemplos de código demonstram como aplicar práticas corretas de acessibilidade, melhorando a experiência de navegação para todos os usuários.
 
 ## 11. Finalidade do Link  
 - **O que é:** Cada link deve ter um texto descritivo ou estar inserido em um contexto que indique claramente sua finalidade.  
